@@ -4,18 +4,18 @@ import { Outlet, useNavigate } from "react-router-dom";
 function Layout() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-      <main>
+      <Navbar />
+      <Box component={"main"} sx={{ minHeight: "85vh" }}>
         {/* Render the app routes via the Layout Outlet */}
         <Outlet />
-      </main>
-      <footer>
-        <Typography component={"div"} variant="caption">
-          ©️ Colin Monaghan 2024
-        </Typography>
-      </footer>
+      </Box>
+      <Typography
+        component={"footer"}
+        variant="caption"
+        sx={{ display: "flex", justifyContent: "center" }}
+      >
+        ©️ Colin Monaghan 2024
+      </Typography>
     </>
   );
 }
@@ -23,12 +23,14 @@ function Layout() {
 function Navbar() {
   return (
     <Box
+      component={"header"}
       sx={(theme) => ({
         display: "flex",
         flexDirection: "row-reverse",
         alignItems: "center",
         textAlign: "center",
-        margin: theme.spacing(4),
+        padding: theme.spacing(4),
+        backgroundColor: theme.palette.background.default,
       })}
     >
       <Typography
@@ -52,6 +54,7 @@ function NavbarLink({ link, title }: { link: string; title: string }) {
     <Button
       sx={(theme) => ({
         margin: theme.spacing(0, 1),
+        color: theme.palette.text.primary,
       })}
       onClick={() => navigate(link)}
     >
