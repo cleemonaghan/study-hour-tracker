@@ -1,3 +1,4 @@
+import { Box, Button, Typography } from "@mui/material";
 import { Outlet, useNavigate } from "react-router-dom";
 
 function Layout() {
@@ -10,20 +11,52 @@ function Layout() {
         {/* Render the app routes via the Layout Outlet */}
         <Outlet />
       </main>
-      <footer>©️ Colin Monaghan 2024</footer>
+      <footer>
+        <Typography component={"div"} variant="caption">
+          ©️ Colin Monaghan 2024
+        </Typography>
+      </footer>
     </>
   );
 }
 
 function Navbar() {
-  const navigate = useNavigate();
-
   return (
-    <>
-      <h1>Study Hour Tracker</h1>
-      <button onClick={() => navigate("/")}>Home</button>
-      <button onClick={() => navigate("/page1")}>Page 1</button>
-    </>
+    <Box
+      sx={(theme) => ({
+        display: "flex",
+        flexDirection: "row-reverse",
+        alignItems: "center",
+        textAlign: "center",
+        margin: theme.spacing(4),
+      })}
+    >
+      <Typography
+        sx={(theme) => ({
+          margin: theme.spacing(0, 1),
+        })}
+        component={"h1"}
+        variant="h5"
+      >
+        Study Hour Tracker
+      </Typography>
+      <NavbarLink link={"/"} title={"Home"} />
+      <NavbarLink link={"/page1"} title={"Page 1"} />
+    </Box>
+  );
+}
+
+function NavbarLink({ link, title }: { link: string; title: string }) {
+  const navigate = useNavigate();
+  return (
+    <Button
+      sx={(theme) => ({
+        margin: theme.spacing(0, 1),
+      })}
+      onClick={() => navigate(link)}
+    >
+      {title}
+    </Button>
   );
 }
 
