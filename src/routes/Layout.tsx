@@ -5,7 +5,10 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <Box component={"main"} sx={{ minHeight: "85vh" }}>
+      <Box
+        component={"main"}
+        sx={(theme) => ({ margin: theme.spacing(16.5, 4, 4, 4) })}
+      >
         {/* Render the app routes via the Layout Outlet */}
         <Outlet />
       </Box>
@@ -25,11 +28,15 @@ function Navbar() {
     <Box
       component={"header"}
       sx={(theme) => ({
+        position: "fixed",
+        top: 0,
+        width: "95%",
+        zIndex: 1,
+        padding: `${theme.spacing(4)} 2.5% ${theme.spacing(4)}`,
         display: "flex",
         flexDirection: "row-reverse",
         alignItems: "center",
         textAlign: "center",
-        padding: theme.spacing(4),
         backgroundColor: theme.palette.background.default,
       })}
     >
