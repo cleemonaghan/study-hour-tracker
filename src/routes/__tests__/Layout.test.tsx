@@ -24,6 +24,6 @@ test("renders navbar", () => {
   element = screen.getByText(/Home/i);
   expect(element).toBeInTheDocument();
 
-  element = screen.getByText(/Page 1/i);
+  element = screen.getByText(/Dashboard/i);
   expect(element).toBeInTheDocument();
 });

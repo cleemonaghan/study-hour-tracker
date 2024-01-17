@@ -50,7 +50,7 @@ function Navbar() {
         Study Hour Tracker
       </Typography>
       <NavbarLink link={"/"} title={"Home"} />
-      <NavbarLink link={"/page1"} title={"Page 1"} />
+      <NavbarLink link={"/dashboard"} title={"Dashboard"} />
     </Box>
   );
 }

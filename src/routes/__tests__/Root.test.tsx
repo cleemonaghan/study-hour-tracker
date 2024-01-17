@@ -13,14 +13,14 @@ test("redirects when navbar item clicked", async () => {
   const home = screen.getByText(/learn react/i);
   expect(home).toBeInTheDocument();
 
-  const redirect = screen.getByText(/Page 1/i);
+  const redirect = screen.getByText(/Dashboard/i);
   expect(redirect).toBeInTheDocument();
   await act(async () => {
     redirect.click();
   });
 
-  const page1 = screen.getByTestId(/page1/i);
-  expect(page1).toBeInTheDocument();
+  const dashboard = screen.getByTestId(/dashboard/i);
+  expect(dashboard).toBeInTheDocument();
 });
 
 test("redirects when landing on a bad page", () => {
