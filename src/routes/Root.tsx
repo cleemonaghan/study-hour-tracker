@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import Layout from "./Layout";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 import { themeOptions } from "../theme";
 import Dashboard from "./dashboard/Dashboard";
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const theme = createTheme(themeOptions);
+const theme = responsiveFontSizes(createTheme(themeOptions));
 
 export default function App() {
   return <RouterProvider router={router} />;

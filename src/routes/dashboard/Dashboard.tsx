@@ -1,10 +1,9 @@
 import { Box, Grid, Paper, Typography, styled, useTheme } from "@mui/material";
 import { LineChart } from "@mui/x-charts/LineChart";
 import StudyHoursDataGrid from "./StudyHoursDataGrid";
+import { legendClasses } from "@mui/x-charts/ChartsLegend";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
@@ -41,16 +40,16 @@ function Dashboard() {
           md={3}
           title="Current Chapter"
           body={`${data.currentChapter}/${data.maxChapters}`}
-          color={theme.palette.primary.contrastText}
-          backgroundColor={theme.palette.primary.light}
+          color={theme.palette.secondary.contrastText}
+          backgroundColor={theme.palette.secondary.light}
         />
         <GridItem
           sm={6}
           md={3}
           title="Hours This Week"
           body={`${data.hoursThisWeek}/${data.expectedHoursThisWeek}`}
-          color={theme.palette.primary.contrastText}
-          backgroundColor={theme.palette.primary.main}
+          color={theme.palette.secondary.contrastText}
+          backgroundColor={theme.palette.secondary.main}
         />
         <GridItem
           sm={6}
@@ -58,20 +57,20 @@ function Dashboard() {
           title="Total Hours"
           body={`${data.accumulatedHours}/${data.totalExpectedHours}`}
           color={theme.palette.text.primary}
-          backgroundColor={theme.palette.secondary.light}
+          backgroundColor={theme.palette.primary.light}
         />
         <GridItem
           sm={6}
           md={3}
           title="Days Until Exam"
           body={`${data.daysUntilExam}`}
-          color={theme.palette.secondary.contrastText}
-          backgroundColor={theme.palette.secondary.main}
+          color={theme.palette.primary.contrastText}
+          backgroundColor={theme.palette.primary.main}
         />
         <Grid item xs={12} sm={8} md={5} lg={4}>
           <Item
             sx={(theme) => ({
-              color: theme.palette.secondary.dark,
+              color: theme.palette.primary.dark,
               backgroundColor: theme.palette.background.default,
               width: "100uv",
               height: theme.spacing(60),
@@ -90,12 +89,31 @@ function Dashboard() {
             data-testid="study-hours-graph"
           >
             <LineChart
+              xAxis={[
+                {
+                  label: "Week",
+                  labelStyle: {
+                    fontSize: "1.2rem",
+                    fontWeight: theme.typography.fontWeightBold,
+                  },
+                  data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                  tickMinStep: 1,
+                },
+              ]}
+              slotProps={{
+                legend: {
+                  labelStyle: {
+                    fontSize: "1.2rem",
+                    fontWeight: theme.typography.fontWeightBold,
+                  },
+                },
+              }}
               series={[
                 {
                   curve: "linear",
                   data: data.hoursStudied,
                   label: "Hours Studied",
-                  color: theme.palette.secondary.main,
+                  color: theme.palette.primary.main,
                 },
               ]}
             />
@@ -142,7 +160,7 @@ function GridItem({
         >
           {title}
         </Typography>
-        <Typography component={"div"} variant="body1">
+        <Typography component={"div"} variant="h3">
           {body}
         </Typography>
       </Item>

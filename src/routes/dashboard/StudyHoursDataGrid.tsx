@@ -15,22 +15,16 @@ const rows: GridRowsProp = [
 ];
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "Week", width: 150 },
-  { field: "hours", headerName: "Hours", editable: true, width: 150 },
+  { field: "id", headerName: "Week", flex: 1 },
+  { field: "hours", headerName: "Hours", editable: true, flex: 1 },
 ];
 
 function CustomGridToolbar() {
   return (
     <GridToolbarContainer>
-      <GridToolbarColumnsButton
-        sx={(theme) => ({ color: theme.palette.primary.dark })}
-      />
-      <GridToolbarFilterButton
-        sx={(theme) => ({ color: theme.palette.primary.dark })}
-      />
-      <GridToolbarDensitySelector
-        sx={(theme) => ({ color: theme.palette.primary.dark })}
-      />
+      <GridToolbarColumnsButton />
+      <GridToolbarFilterButton />
+      <GridToolbarDensitySelector />
     </GridToolbarContainer>
   );
 }
@@ -44,19 +38,18 @@ export default function StudyHoursDataGrid() {
       hideFooterSelectedRowCount
       loading={false}
       sx={(theme) => ({
-        color: theme.palette.secondary.dark,
-        borderColor: theme.palette.secondary.dark,
-        "& .MuiDataGrid-columnHeaders": {
-          borderColor: theme.palette.secondary.dark,
+        borderColor: theme.palette.primary.dark,
+        "& .MuiDataGrid-columnHeaders, & .MuiDataGrid-withBorderColor": {
+          borderColor: theme.palette.primary.dark,
+          fontSize: "1.2rem",
+          fontWeight: theme.typography.fontWeightBold,
+          color: theme.palette.primary.dark,
         },
         "& .MuiDataGrid-cell": {
           borderBottom: 0,
         },
         "& .MuiDataGrid-row:hover": {
-          backgroundColor: theme.palette.primary.light,
-        },
-        "& .MuiDataGrid-withBorderColor": {
-          borderColor: theme.palette.secondary.dark,
+          backgroundColor: theme.palette.secondary.light,
         },
         overflowX: "hidden",
       })}

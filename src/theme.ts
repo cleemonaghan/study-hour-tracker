@@ -18,12 +18,12 @@ export const themeOptions: ThemeOptions = {
     ].join(","),
   },
   palette: {
-    primary: {
+    secondary: {
       light: "#dde5b6",
       main: "#adc178", // Olivine
       dark: "#6d803b",
     },
-    secondary: {
+    primary: {
       light: "#ae998c",
       main: "#6c584c", // Umber
       dark: "#40352e",
