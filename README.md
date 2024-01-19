@@ -74,10 +74,11 @@ A web application for logging and tracking study hours.
 
 Major frameworks/libraries used in this project:
 
-- [![React][React.js]][React-url]
 - [![TypeScript][TypeScript]][TypeScript-url]
+- [![React][React.js]][React-url]
 - [![Material-UI][Material-UI]][Material-UI-url]
 - [![React-Router][React-Router]][React-Router-url]
+- [![Amazon-aws][Amazon-aws]][Amazon-aws-url]
 - [![Jest][Jest]][Jest-url]
 - [![Testing-Library][Testing-Library]][Testing-Library-url]
 
@@ -208,3 +209,5 @@ Resources I found helpful and would like to give credit to:
 [Jest-url]: https://jestjs.io/
 [Testing-Library]: https://img.shields.io/badge/testing%20library-323330?style=for-the-badge&logo=testing-library&logoColor=red
 [Testing-Library-url]: https://testing-library.com/
+[Amazon-aws]: https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white
+[Amazon-aws-url]: https://aws.amazon.com/

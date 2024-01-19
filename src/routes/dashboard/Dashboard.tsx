@@ -1,7 +1,6 @@
 import { Box, Grid, Paper, Typography, styled, useTheme } from "@mui/material";
 import { LineChart } from "@mui/x-charts/LineChart";
 import StudyHoursDataGrid from "./StudyHoursDataGrid";
-import { legendClasses } from "@mui/x-charts/ChartsLegend";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
