@@ -26,8 +26,8 @@
     <a href="https://github.com/cleemonaghan/study-hour-tracker"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="">View Demo</a> -->
-    <!-- · -->
+    <a href="https://main.d8645itua3wgf.amplifyapp.com/">View Demo</a>
+    ·
     <a href="https://github.com/cleemonaghan/study-hour-tracker/issues">Report Bug</a>
     ·
     <a href="https://github.com/cleemonaghan/study-hour-tracker/issues">Request Feature</a>
